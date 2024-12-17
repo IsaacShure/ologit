@@ -12,6 +12,8 @@ notebook = "^7.3.1"
 scikit-learn = "^1.6.0"
 scipy = "^1.14.1"
 pandas = "^2.2.3"
+statsmodels = "^0.14.4"
+black = {extras = ["jupyter"], version = "^24.10.0"}
 
 
 [build-system]
