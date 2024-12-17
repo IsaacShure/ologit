@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ologit"
+version = "0.1.0"
+description = "Test of python ordered logistic regression"
+authors = ["Isaac Shure <shureisaac@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.2.0"
+notebook = "^7.3.1"
+scikit-learn = "^1.6.0"
+scipy = "^1.14.1"
+pandas = "^2.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
