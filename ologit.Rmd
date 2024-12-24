@@ -39,11 +39,21 @@ summary(m)
 (ctable <- coef(summary(m)))
 ```
 ```{r}
+# Get degrees of freedom (approximated)
+n <- nrow(dat)
+k <- length(m$coefficients)
+df <- n - k
+
+# convert t-values to z-values
+z_values <- ctable[, "t value"] * sqrt(df / (df -1))
+
 # calculate p values
 p <- pnorm(abs(ctable[, "t value"]), lower.tail=FALSE) * 2
+p_z <- pnorm(abs(z_values), lower.tail=FALSE) * 2
 
 ## combined table
-(ctable <- cbind(ctable, "p value" = p))
+ctable <- cbind(ctable, "p value" = p)
+(ctable <- cbind(ctable, "p value (from z)" = p_z))
 ```
 
 
